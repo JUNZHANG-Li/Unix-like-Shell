@@ -1,0 +1,360 @@
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+test_cat (__main__.TestShell) ... ok
+test_cat_stdin (__main__.TestShell) ... ok
+test_cd_pwd (__main__.TestShell) ... ok
+test_cut (__main__.TestShell) ... ok
+test_cut_interval (__main__.TestShell) ... FAIL
+test_cut_open_interval (__main__.TestShell) ... ok
+test_cut_overlapping (__main__.TestShell) ... FAIL
+test_cut_stdin (__main__.TestShell) ... ok
+test_cut_union (__main__.TestShell) ... ok
+test_disabled_doublequotes (__main__.TestShell) ... ok
+test_doublequotes (__main__.TestShell) ... ok
+test_echo (__main__.TestShell) ... ok
+test_find (__main__.TestShell) ... ok
+test_find_dir (__main__.TestShell) ... FAIL
+test_find_pattern (__main__.TestShell) ... ok
+test_globbing (__main__.TestShell) ... ok
+test_globbing_dir (__main__.TestShell) ... ok
+test_grep (__main__.TestShell) ... ok
+test_grep_files (__main__.TestShell) ... FAIL
+test_grep_no_matches (__main__.TestShell) ... ok
+test_grep_re (__main__.TestShell) ... FAIL
+test_grep_stdin (__main__.TestShell) ... FAIL
+test_head (__main__.TestShell) ... ok
+test_head_n0 (__main__.TestShell) ... ok
+test_head_n5 (__main__.TestShell) ... ok
+test_head_n50 (__main__.TestShell) ... ok
+test_head_stdin (__main__.TestShell) ... ok
+test_input_redirection (__main__.TestShell) ... ok
+test_input_redirection_infront (__main__.TestShell) ... FAIL
+test_input_redirection_nospace (__main__.TestShell) ... ok
+test_ls (__main__.TestShell) ... ok
+test_ls_dir (__main__.TestShell) ... ok
+test_ls_hidden (__main__.TestShell) ... ok
+test_nested_doublequotes (__main__.TestShell) ... ok
+test_output_redirection (__main__.TestShell) ... ok
+test_output_redirection_overwrite (__main__.TestShell) ... ok
+test_pipe_chain_sort_uniq (__main__.TestShell) ... FAIL
+test_pipe_uniq (__main__.TestShell) ... FAIL
+test_pwd (__main__.TestShell) ... ok
+test_quote_keyword (__main__.TestShell) ... ok
+test_semicolon (__main__.TestShell) ... ok
+test_semicolon_chain (__main__.TestShell) ... ok
+test_semicolon_exception (__main__.TestShell) ... ok
+test_singlequotes (__main__.TestShell) ... ok
+test_sort (__main__.TestShell) ... FAIL
+test_sort_r (__main__.TestShell) ... FAIL
+test_sort_stdin (__main__.TestShell) ... ok
+test_sort_uniq (__main__.TestShell) ... FAIL
+test_splitting (__main__.TestShell) ... FAIL
+test_substitution (__main__.TestShell) ... ok
+test_substitution_app (__main__.TestShell) ... FAIL
+test_substitution_doublequotes (__main__.TestShell) ... ok
+test_substitution_insidearg (__main__.TestShell) ... FAIL
+test_substitution_keywords (__main__.TestShell) ... FAIL
+test_substitution_semicolon (__main__.TestShell) ... ok
+test_substitution_sort_find (__main__.TestShell) ... FAIL
+test_substitution_splitting (__main__.TestShell) ... ok
+test_tail (__main__.TestShell) ... ok
+test_tail_n0 (__main__.TestShell) ... ok
+test_tail_n5 (__main__.TestShell) ... ok
+test_tail_n50 (__main__.TestShell) ... ok
+test_tail_stdin (__main__.TestShell) ... ok
+test_uniq (__main__.TestShell) ... ok
+test_uniq_i (__main__.TestShell) ... ok
+test_uniq_stdin (__main__.TestShell) ... ok
+test_unsafe_ls (__main__.TestShell) ... FAIL
+
+======================================================================
+FAIL: test_cut_interval (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 280, in test_cut_interval
+    self.assertEqual(result, ["AA", "BB", "AA"])
+AssertionError: Lists differ: [''] != ['AA', 'BB', 'AA']
+
+First differing element 0:
+''
+'AA'
+
+Second list contains 2 additional elements.
+First extra element 1:
+'BB'
+
+- ['']
++ ['AA', 'BB', 'AA']
+
+======================================================================
+FAIL: test_cut_overlapping (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 292, in test_cut_overlapping
+    self.assertEqual(result, ["AA", "BB", "AA"])
+AssertionError: Lists differ: ['AA', 'A', 'BB', 'B', 'AA', 'A'] != ['AA', 'BB', 'AA']
+
+First differing element 1:
+'A'
+'BB'
+
+First list contains 3 additional elements.
+First extra element 3:
+'B'
+
+- ['AA', 'A', 'BB', 'B', 'AA', 'A']
++ ['AA', 'BB', 'AA']
+
+======================================================================
+FAIL: test_find_dir (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 361, in test_find_dir
+    self.assertEqual(
+AssertionError: Items in the first set but not the second:
+'dir1longfile.txt'
+'dir1file1.txt'
+'dir1file2.txt'
+Items in the second set but not the first:
+'dir1/longfile.txt'
+C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised>
+'dir1/file1.txt'
+
+======================================================================
+FAIL: test_grep_files (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 212, in test_grep_files
+    self.assertEqual(
+AssertionError: Lists differ: [''] != ['dir1/file1.txt:AAA', 'dir1/file1.txt:BBB'[40 chars]CCC']
+
+First differing element 0:
+''
+'dir1/file1.txt:AAA'
+
+Second list contains 3 additional elements.
+First extra element 1:
+'dir1/file1.txt:BBB'
+
+- ['']
++ ['dir1/file1.txt:AAA',
++  'dir1/file1.txt:BBB',
++  'dir1/file1.txt:AAA',
++  'dir1/file2.txt:CCC']
+
+======================================================================
+FAIL: test_grep_re (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 206, in test_grep_re
+    self.assertEqual(result, ["AAA", "AAA"])
+AssertionError: Lists differ: [''] != ['AAA', 'AAA']
+
+First differing element 0:
+''
+'AAA'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'AAA'
+
+- ['']
++ ['AAA', 'AAA']
+
+======================================================================
+FAIL: test_grep_stdin (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 226, in test_grep_stdin
+    self.assertEqual(result, ["AAA", "BBB", "AAA", "CCC"])
+AssertionError: Lists differ: [''] != ['AAA', 'BBB', 'AAA', 'CCC']
+
+First differing element 0:
+''
+'AAA'
+
+Second list contains 3 additional elements.
+First extra element 1:
+'BBB'
+
+- ['']
++ ['AAA', 'BBB', 'AAA', 'CCC']
+
+======================================================================
+FAIL: test_input_redirection_infront (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 411, in test_input_redirection_infront
+    self.assertEqual(result, "CCC")
+AssertionError: '' != 'CCC'
++ CCC
+
+======================================================================
+FAIL: test_pipe_chain_sort_uniq (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 496, in test_pipe_chain_sort_uniq
+    self.assertEqual(result, ["AAA", "BBB", "CCC"])
+AssertionError: Lists differ: [''] != ['AAA', 'BBB', 'CCC']
+
+First differing element 0:
+''
+'AAA'
+
+Second list contains 2 additional elements.
+First extra element 1:
+'BBB'
+
+- ['']
++ ['AAA', 'BBB', 'CCC']
+
+======================================================================
+FAIL: test_pipe_uniq (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 478, in test_pipe_uniq
+    self.assertEqual(result, ["AAA", "BBB", "AAA"])
+AssertionError: Lists differ: [''] != ['AAA', 'BBB', 'AAA']
+
+First differing element 0:
+''
+'AAA'
+
+Second list contains 2 additional elements.
+First extra element 1:
+'BBB'
+
+- ['']
++ ['AAA', 'BBB', 'AAA']
+
+======================================================================
+FAIL: test_sort (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 232, in test_sort
+    self.assertEqual(result, ["AAA", "AAA", "BBB"])
+AssertionError: Lists differ: ["lines in sort:  ['AAA\\n', 'BBB\\n', 'AAA\\n']", 'AAA', 'AAA', 'BBB'] != ['AAA', 'AAA', 'BBB']
+
+First differing element 0:
+"lines in sort:  ['AAA\\n', 'BBB\\n', 'AAA\\n']"
+'AAA'
+
+First list contains 1 additional elements.
+First extra element 3:
+'BBB'
+
+- ["lines in sort:  ['AAA\\n', 'BBB\\n', 'AAA\\n']", 'AAA', 'AAA', 'BBB']
++ ['AAA', 'AAA', 'BBB']
+
+======================================================================
+FAIL: test_sort_r (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 244, in test_sort_r
+    self.assertEqual(result, ["BBB", "AAA", "AAA"])
+AssertionError: Lists differ: ["lines in sort:  ['AAA\\n', 'BBB\\n', 'AAA\\n']", 'BBB', 'AAA', 'AAA'] != ['BBB', 'AAA', 'AAA']
+
+First differing element 0:
+"lines in sort:  ['AAA\\n', 'BBB\\n', 'AAA\\n']"
+'BBB'
+
+First list contains 1 additional elements.
+First extra element 3:
+'AAA'
+
+- ["lines in sort:  ['AAA\\n', 'BBB\\n', 'AAA\\n']", 'BBB', 'AAA', 'AAA']
++ ['BBB', 'AAA', 'AAA']
+
+======================================================================
+FAIL: test_sort_uniq (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 262, in test_sort_uniq
+    self.assertEqual(result, ["AAA", "BBB"])
+AssertionError: Lists differ: ["lines in sort:  ['AAA\\n', 'BBB\\n', 'AAA\\n']", 'AAA', 'BBB'] != ['AAA', 'BBB']
+
+First differing element 0:
+"lines in sort:  ['AAA\\n', 'BBB\\n', 'AAA\\n']"
+'AAA'
+
+First list contains 1 additional elements.
+First extra element 2:
+'BBB'
+
+- ["lines in sort:  ['AAA\\n', 'BBB\\n', 'AAA\\n']", 'AAA', 'BBB']
++ ['AAA', 'BBB']
+
+======================================================================
+FAIL: test_splitting (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 593, in test_splitting
+    self.assertEqual(result, "abc")
+AssertionError: 'a"b"c' != 'abc'
+- a"b"c
+?  - -
++ abc
+
+
+======================================================================
+FAIL: test_substitution_app (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 551, in test_substitution_app
+    self.assertEqual(result, "foo")
+AssertionError: '' != 'foo'
++ foo
+
+======================================================================
+FAIL: test_substitution_insidearg (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 515, in test_substitution_insidearg
+    self.assertEqual(result, "aaa")
+AssertionError: 'aa a' != 'aaa'
+- aa a
+?   -
++ aaa
+
+
+======================================================================
+FAIL: test_substitution_keywords (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 545, in test_substitution_keywords
+    self.assertEqual(result, "''")
+AssertionError: '' != "''"
++ ''
+
+======================================================================
+FAIL: test_substitution_sort_find (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 533, in test_substitution_sort_find
+    self.assertEqual(result, ["AAA", "AAA", "aaa"])
+AssertionError: Lists differ: [''] != ['AAA', 'AAA', 'aaa']
+
+First differing element 0:
+''
+'AAA'
+
+Second list contains 2 additional elements.
+First extra element 1:
+'AAA'
+
+- ['']
++ ['AAA', 'AAA', 'aaa']
+
+======================================================================
+FAIL: test_unsafe_ls (__main__.TestShell)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jianheng H\Desktop\python-shell-p15-master-import-shell-centralised\system_test\tests.py", line 470, in test_unsafe_ls
+    self.assertEqual(result, "AAA")
+AssertionError: '' != 'AAA'
++ AAA
+
+----------------------------------------------------------------------
+Ran 66 tests in 188.548s
+
+FAILED (failures=18)
